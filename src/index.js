@@ -1,11 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Merria from './HookMerria';
-import Greetings from './Greetings';
-import Condition from './ConditionGreetings';
-import Flower from './FlowersList';
-import Welcome from './HookForm';
+import Merria from './components/HookMerria';
+import Greetings from './components/Greetings';
+import Condition from './components/ConditionGreetings';
+import Flower from './components/FlowersList';
+import Welcome from './components/HookForm';
+import AddFlower from './components/FlowerHook';
+import MoveMouse from './components/HookMousePosition';
+import ContainMouse from './components/MouseMoveContainer';
+import CounterInterval from './components/HookCountInternval';
+import FetchData from './components/FetchData';
+import PleasureFunction from './components/FetchGitData';
+
+// creating context
+export const Username = React.createContext()
+export const Company = React.createContext()
 
 function Hello() {
     return(
@@ -14,10 +24,18 @@ function Hello() {
             <Greetings name="Ashlyn" ability="Psychokinesis"  />
             <Greetings name="Snow" ability="Levitation"/>
             <p>How are you??</p>*/}
+            <PleasureFunction login="lilithinmerria"/> <br /> <br /><br /><br /><br />
+            <Username.Provider value={"Ashlyn"}>
+                <Company.Provider value={"SilverMuse"}></Company.Provider>
+            </Username.Provider>
+            <CounterInterval />
+            <ContainMouse />
             <Welcome />
             <Merria />  
-            <Flower />
-    </div>
+            <AddFlower />
+            {/*<Flower />*/}
+
+        </div>
     );
 }
 
