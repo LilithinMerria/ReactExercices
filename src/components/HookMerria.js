@@ -25,7 +25,7 @@ const Merria = () => {
             <div>
                 <h2 id="hello">{greetings}</h2>
                 <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
-                <button onClick={() => logIn("Greetings Merria")}>LogIn</button>
+                <button onClick={() => logIn(`Greetings ${username}`)}>LogIn</button>
             </div>
           
         )
@@ -33,7 +33,7 @@ const Merria = () => {
     
     return(
         <div>
-            <h2>Greetings Merria</h2>
+            <h2>Greetings {username}</h2>
             <button id="greet" onClick={() => logIn("Greetings Stranger")}>LogOut</button>
             <h2>Your Psychic Power Level is : {raiseTemper}</h2>
            
